@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Gin Rai Dee</title>
+     <link rel="stylesheet" href="style.css">
+
+     <link rel="stylesheet" href="style.css">
+    
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+     <div class="card">
+          <h1>Gin Rai Dee</h1>
+          <h2 id="menu-name">???</h2>
+
+          <div style="margin: 20px 0;">
+               <label for="category" style="color: #666;">เลือกหมวดหมู่:</label>
+               <select id="category">
+                    <option value="all">กินอะไรก็ได้</option>
+                    <option value="healthy">🥗 อาหารสุขภาพ</option>
+                    <option value="energy">🍖 พลังงานสูง</option>
+                    <option value="noodle">🍜 เส้น</option>
+                    <option value="international">🍣 อาหารต่างชาติ</option>
+                    <option value="fruit">🍇 ผลไม้</option>
+                    <option value="dessert">🍰 ของหวาน</option>
+               </select>
+          </div>
+
+          <div id="food-details" class="details-box hidden">
+               <p id="food-desc" style="color: #666; margin-bottom: 10px;">รายละเอียด</p>
+               <div class="badges">
+                    <span class="badge kcal">🔥 <span id="food-cal">0</span></span>
+                    <span class="badge price">💰 <span id="food-price">0</span> บาท</span>
+               </div>
+          </div>
+
+          <button onclick="getRandomMenu()">สุ่มเลย</button>
+     </div>
+     <script src="app.js"></script>
+
+     <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("sw.js")
+          .then(() => console.log("Service Worker Registered"))
+          .catch((err) => console.log("SW Failed", err));
+      }
+    </script>
+</body>
+</html>
